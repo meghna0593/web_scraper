@@ -86,6 +86,11 @@ class ProductListView(APIView):
             error_message = f"IndexError: {str(e)}"
             return Response(error_message, status=status.HTTP_400_BAD_REQUEST)
 
+        except Exception as e:
+            # Return a standardized error response
+            error_message = f"An error occurred: {str(e)}"
+            return Response(error_message, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
         
 
     def get_cached_data(self):
