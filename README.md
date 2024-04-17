@@ -41,3 +41,15 @@ The relevant product details being pulled are:
 - **Example**: 
   ```http
   GET /products HTTP/1.1
+
+
+### Swagger docs
+- **URL**: `/products/swagger`
+- **Method**: GET
+- **Description**: Details on /products endpoint. Also, retrieves a paginated list of all products available. 
+- **Parameters**: Add page numbers in the section available
+
+
+### Redocs
+- **URL**: `/products/redoc`
+- **Description**: Details on /products endpoint
