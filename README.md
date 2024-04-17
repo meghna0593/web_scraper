@@ -32,6 +32,9 @@ The relevant product details being pulled are:
     python manage.py makemigrations
     python manage.py migrate
 
+## To undo migrations:
+    python manage.py migrate <app_name> <migration_number_to_retain>
+
 ## Endpoints
 
 ### Get All Products (paginated)
@@ -44,12 +47,12 @@ The relevant product details being pulled are:
 
 
 ### Swagger docs
-- **URL**: `/products/swagger`
+- **URL**: `/swagger`
 - **Method**: GET
 - **Description**: Details on /products endpoint. Also, retrieves a paginated list of all products available. 
 - **Parameters**: Add page numbers in the section available
 
 
 ### Redocs
-- **URL**: `/products/redoc`
+- **URL**: `/redoc`
 - **Description**: Details on /products endpoint
