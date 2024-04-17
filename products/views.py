@@ -75,7 +75,7 @@ class ProductListView(APIView):
             # Return serialized product data if valid
             if serializer.is_valid:
                 return Response(serializer.data, status=status.HTTP_200_OK)
-            else:
+            else: # Return errors if invalid
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             
         except KeyError as e:
