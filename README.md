@@ -64,7 +64,6 @@ However, the implementation is pretty straight-forward.
 
 1. Lambda Function Setup:
 - Write a lambda function to extract product details
-```http
 def extract_product_details(event, context):
     # Extract URLs from the event
     urls = event.get('urls', [])
