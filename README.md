@@ -1,5 +1,20 @@
 # Web Scraper Assignment
 
+This Django application is responsible for scraping product details from provided URLs. 
+
+The relevant product details being pulled are:
+- Product SKU
+- Product Name
+- Product Title
+- Product Price
+- Product Availability
+- Product Image URLs
+- Product Catergory Hierarchy
+- Product Activity
+- Product Colors
+- Product Detail Page URL
+- Currency Code
+
 ## To start the Python virtual env:
     python -m venv venv
     source venv/bin/activate
@@ -26,3 +41,15 @@
 - **Example**: 
   ```http
   GET /products HTTP/1.1
+
+
+### Swagger docs
+- **URL**: `/products/swagger`
+- **Method**: GET
+- **Description**: Details on /products endpoint. Also, retrieves a paginated list of all products available. 
+- **Parameters**: Add page numbers in the section available
+
+
+### Redocs
+- **URL**: `/products/redoc`
+- **Description**: Details on /products endpoint

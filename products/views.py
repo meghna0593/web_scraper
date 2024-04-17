@@ -1,8 +1,10 @@
 from django.core.cache import cache
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import status
+from .swagger_definitions import manual_parameters, success_response
 
 from .constants import PRODUCT_URLS
 from .models import Product
@@ -23,6 +25,13 @@ class ProductListView(APIView):
     """
     pagination_class = ProductPagination
 
+    @swagger_auto_schema(
+        tags=['Products'],
+        operation_summary="Get a list of products",
+        operation_description="Retrieve a paginated list of products.",
+        responses=success_response,
+        manual_parameters=manual_parameters,
+    )
     def get(self, request):
         """
         GET method for retrieving product list.
