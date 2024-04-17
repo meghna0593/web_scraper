@@ -63,28 +63,29 @@ Because of resource constraints, utilizing an AWS Lambda function was not feasib
 However, the implementation is pretty straight-forward.
 
 1. Lambda Function Setup:
-- Write a lambda function to extract product details
-def extract_product_details(event, context):
-    # Extract URLs from the event
-    urls = event.get('urls', [])
-    
-    product_details = []
-    
-    # Iterate over URLs and extract product details
-    for url in urls:
-        response = requests.get(url)
-        if response.status_code == 200:
-            # Extract product details and append to product_details list
-            product_details.append({
-                'name': response[..]['product.displayName'],
-                # Add more product details here
-            })
-    
-    # Return product details as JSON
-    return {
-        'statusCode': 200,
-        'body': json.dumps(product_details)
-    }
+    - Write a lambda function to extract product details
+    ```python
+        def extract_product_details(event, context):
+            # Extract URLs from the event
+            urls = event.get('urls', [])
+            
+            product_details = []
+            
+            # Iterate over URLs and extract product details
+            for url in urls:
+                response = requests.get(url)
+                if response.status_code == 200:
+                    # Extract product details and append to product_details list
+                    product_details.append({
+                        'name': response[..]['product.displayName'],
+                        # Add more product details here
+                    })
+            
+            # Return product details as JSON
+            return {
+                'statusCode': 200,
+                'body': json.dumps(product_details)
+            }
 
 2. API Gateway Configuration:
 - Create a new REST API in the AWS API Gateway console.
