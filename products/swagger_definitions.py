@@ -14,10 +14,10 @@ manual_parameters=[
 product_item_example = {
     "name": openapi.Schema(type=openapi.TYPE_STRING, description="Product name"),
     "price": openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_INTEGER), description="Product Prices"),
-    "color": openapi.Schema(type=openapi.TYPE_STRING, description="Product colors"),
-    "url": openapi.Schema(type=openapi.TYPE_STRING, format=openapi.FORMAT_URI, description="Product URL"),
+    "color": openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_STRING), description="Product Available Colors"),
+    "url": openapi.Schema(type=openapi.TYPE_STRING, description="PDP URL"),
     "image_urls": openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_STRING, format=openapi.FORMAT_URI), description="List of image URLs"),
-    "activity": openapi.Schema(type=openapi.TYPE_STRING, description="Product can be used with activity"),
+    "activity": openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_STRING), description="Intended use the product is designed for"),
     "title": openapi.Schema(type=openapi.TYPE_STRING, description="Product title"),
     "category_hierarchy": openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_STRING), description="Category hierarchy"),
     "default_sku": openapi.Schema(type=openapi.TYPE_STRING, description="Default SKU"),
@@ -33,4 +33,5 @@ success_response = {
         schema=ProductSerializer(many=True),
         examples={'application/json': product_list_example}, 
     ),
+    400: "Bad request"
 }
