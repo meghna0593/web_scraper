@@ -20,20 +20,20 @@ The relevant product details being pulled are:
     source venv/bin/activate
 
 ## To install Django
-    python -m pip install Django
+    make install
 
 ## To run the server:
-    python manage.py runserver   
+    make runserver   
 
 ## To run tests:
-    python manage.py test 
+    make test
 
 ## To create and run migrations:
-    python manage.py makemigrations
-    python manage.py migrate
+    make migrate
 
 ## To undo migrations:
-    python manage.py migrate <app_name> <migration_number_to_retain>
+    make undo_migrate <app_name> <migration_number_to_retain>
+
 
 ## Endpoints
 
