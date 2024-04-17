@@ -8,7 +8,10 @@
     python -m pip install Django
 
 ## To run the server:
-    python manage.py runserver    
+    python manage.py runserver   
+
+## To run tests:
+    python manage.py test 
 
 ## To create and run migrations:
     python manage.py makemigrations
