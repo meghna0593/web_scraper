@@ -19,7 +19,7 @@ The relevant product details being pulled are:
     python -m venv venv
     source venv/bin/activate
 
-## To install Django
+## To install dependencies
     make install
 
 ## To run the server:
