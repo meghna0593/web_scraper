@@ -1,7 +1,7 @@
 # Install Django
 install:
-	python -m pip install Django
-
+	pip install -r requirements.txt
+	
 # Run the server
 runserver:
 	python manage.py runserver
